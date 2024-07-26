@@ -18,5 +18,11 @@ class DoDidDoneTheme {
         ),
       ),
     ),
+    // Добавляем стиль для BottomNavigationBar
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.transparent,
+      selectedItemColor: const Color(0xFF9F7BF6).withOpacity(0.8), // Основной цвет для выбранной иконки
+      unselectedItemColor: Colors.grey.withOpacity(0.5), // Серый цвет для невыбранных иконок
+    ),
   );
 }
