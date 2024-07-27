@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zc_dodiddone/theme/theme.dart';
+import 'package:zc_dodiddone/screens/profile.dart'; // Импортируем ProfilePage
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -16,10 +17,10 @@ class _MainPageState extends State<MainPage> {
     const Center(child: Text('Задачи')),
     // Сегодня
     const Center(child: Text('Сегодня')),
-    // Профиль
-    const Center(child: Text('Профиль')),
     // Выполнено
     const Center(child: Text('Выполнено')),
+    // Профиль
+    const ProfilePage(), // Используем ProfilePage
   ];
 
   @override
@@ -42,7 +43,9 @@ class _MainPageState extends State<MainPage> {
             stops: const [0.1, 0.9], // Основной цвет занимает 90% пространства
           ),
         ),
-        child: _screens[_selectedIndex],
+        child: Center(
+          child: _screens[_selectedIndex],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.transparent,
@@ -63,12 +66,12 @@ class _MainPageState extends State<MainPage> {
             label: 'Сегодня',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Профиль',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.check_circle),
             label: 'Выполнено',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Профиль',
           ),
         ],
       ),
